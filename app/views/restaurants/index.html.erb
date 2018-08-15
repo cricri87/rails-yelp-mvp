@@ -1,0 +1,14 @@
+<div class="container text-center">
+  <h1>Our Restaurants :</h1>
+  <div class="wrapper">
+    <div class="row">
+    <% @restaurants.each_with_index do |restaurant, index| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+           <h4><%= link_to restaurant.name, restaurant_path(restaurant.id) %></h4>
+        <div class="restaurant-card" style="background-image: url('https://picsum.photos/300/300/?image=<%= (0..500).to_a.sample %>'); background-position: center; background-size: cover;">
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
