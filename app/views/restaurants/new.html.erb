@@ -1,8 +1,11 @@
 <div class="container">
-  <%= simple_form_for @restaurant do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :category %>
-    <%= f.button :submit %>
-  <% end %>
+  <div class="wrapper-form">
+    <%= simple_form_for @restaurant do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :category %>
+       <p class="info-resto"><%= f.button :submit, class: 'btn btn-warning' %>
+     <%= link_to 'Back to Restaurants', restaurants_path, class: 'btn btn-info' %>
+    <% end %>
+    </div>
 </div>

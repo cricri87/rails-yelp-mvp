@@ -1,5 +1,6 @@
 <div class="container text-center">
   <h1>Our Restaurants :</h1>
+  <p class="info-resto"><%= link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-warning' %>
   <div class="wrapper">
     <div class="row">
     <% @restaurants.each_with_index do |restaurant, index| %>
