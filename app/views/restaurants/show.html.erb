@@ -4,7 +4,18 @@
       <h3 class="resto-name"><%= @restaurant.name %></h3>
       <p class="info-resto"> Category: <%= @restaurant.category %></p>
       <p> Adress: <%= @restaurant.address %></p>
-      <p class="info-resto"><%= link_to 'Back to Restaurants', restaurants_path, class: 'btn btn-info' %> <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-success' %>
+      <p class="info-resto"><%= link_to 'Back to Restaurants', root_path, class: 'btn btn-info' %> <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-success' %>
+      </p>
+
+          <% @restaurant.reviews.each do |review| %>
+            <p><%= review.content %></p> <p>Rating : <%= review.rating %></p>
+            <% end %>
+            <%= simple_form_for [@restaurant, @review] do |f| %>
+              <%= f.input :content %>
+              <%= f.input :rating %>
+              <%= f.button :submit %>
+
+          <% end %>
     </div>
   </div>
 </div>
